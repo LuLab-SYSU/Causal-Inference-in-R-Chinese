@@ -39,7 +39,7 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
-          output_dir: ./_book
+          path: ./_book
 
       - name: Deploy to github pages
         uses: peaceiris/actions-gh-pages@v4
