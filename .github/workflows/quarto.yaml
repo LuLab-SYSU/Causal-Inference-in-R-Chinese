@@ -18,7 +18,7 @@ jobs:
 
       - name: Install system dependencies 
         run: |
-          sudo apt-get update && sudo apt-get install -y pandoc libharfbuzz-dev libfreetype6-dev libfribidi-dev libglpk40 libfontconfig1-dev libglpk-dev libnode-dev libx11-dev
+          sudo apt-get update && sudo apt-get install -y pandoc libharfbuzz-dev libfreetype6-dev libfribidi-dev libglpk40 libfontconfig1-dev libglpk-dev libnode-dev libx11-dev libcurl4-openssl-dev
 
       - name: Install Google Fonts
         run: |
