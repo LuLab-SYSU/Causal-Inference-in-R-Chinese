@@ -1,56 +1,78 @@
 # 前言 {.unnumbered}
 
-欢迎来到 [*Causal Inference in R*](https://www.r-causal.org/) 中文版。本书中文版内容的翻译由[陆震](https://leslie-lu.github.io/)完成并维护。目前本书中文版内容还没有纸质出版，如果读者是出版人员，并有意愿负责出版本书，请通过 [luzh29@mail2.sysu.edu.cn](mailto:luzh29@mail2.sysu.edu.cn) 联系我们。
+欢迎来到 [*Causal Inference in R*](https://www.r-causal.org/) 中文版。本书中文版内容的翻译由[陆震](https://leslie-lu.github.io/)完成并维护。目前本书中文版内容还没有纸质出版，如果读者是出版人员，并有意愿负责出版本书，请通过 [Zhen.Lu.VA@gmail.com](mailto:Zhen.Lu.VA@gmail.com) 联系我。
 
-对于因果问题的回答，在科学研究与商业用途中都具有重要意义。但是现实中，诸如随机临床试验与 A/B 测试等因果推断方法并不总是可行的。因此，我们需要借助观察数据来进行因果推断。本书将介绍如何使用 R 语言进行因果推断，以及如何使用现代因果推断方法来解决实际问题。通过本书，您将学习到：
+回答因果问题对于科学和商业目的都至关重要，但随机临床试验和 A/B 测试等技术并不总是可行或成功。本书中的工具将帮助读者使用 R 编程语言，更好地基于观察性数据进行因果推断。读完本书后，我们希望帮助你：
 
-1. 更好地理解因果推断的基本概念；
-2. 理解因果推断的假设；
-3. 准确识别进行因果推断的目标人群；
-4. 使用现代因果推断方法来解决实际问题；
-5. 进行因果推断的敏感性分析。
+1.  提出更好的因果问题；
+2.  理解因果推断所需的假设；
+3.  识别你希望对其进行推断的目标人群；
+4.  拟合因果模型并检查其中的问题；
+5.  在所用技术可能并不完美的情况下开展敏感性分析。
 
-本书的目标读者是数据科学家、数据分析师、科学研究人员以及对因果推断感兴趣的读者。尽管在现实中，提问的因果问题可能是不同的，如“医学中癌症相关因果问题”或“某个广告点击率的因果关系”等，但是这些问题背后的因果推断方法是相通的。本书中，我们使用来自医学、经济以及科技相关方面的例子来具体地阐释因果推断。需要提醒大家的是，由于本书聚焦于借助观察数据进行因果推断，因此本书并不会涉及到随机临床试验、A/B 测试的内容。
+本书面向学术研究者和数据科学家。尽管这两类场景中的问题可能不同，但许多技术是相同的：因果推断既有助于提出关于癌症的问题，也有助于提出关于点击的问题。我们使用来自医学、经济学、科技和其他领域的混合例子来说明：你需要一个清楚的因果问题，并愿意透明地说明自己的假设。
 
-在阅读本书前，我们建议您具备以下知识：
+你会在本书中学到很多，但讽刺的是，你不会学到太多关于如何开展随机试验的内容，而随机试验是进行因果推断的最佳工具之一。随机试验及其近亲 A/B 测试（在科技行业中很常见）之所以有吸引力，是因为它们能减轻许多为了有效推断而需要作出的假设。它们在设计上也足够复杂，值得拥有自己的学习资源。相反，我们会聚焦于观察性数据，在这类数据中，我们通常无法从随机化中受益。如果你对随机化技术感兴趣，也先不要把这份资源放到一边：许多为观察性数据设计的因果推断技术，同样能改进随机化分析。
 
-1. 熟悉 [tidyverse](https://www.tidyverse.org/) 生态系统中的 R 包及其总体理念。例如，我们在本书中大量使用 dplyr 和 ggplot2，但不会解释它们的基本语法。要了解更多关于 tidyverse 的入门知识，我们推荐阅读 [*R for Data Science*](https://r4ds.hadley.nz/)；
-2. 熟悉 R 中的基本统计建模。例如，我们将在本书中使用 `lm()` 和 `glm()` 拟合模型，但不会讨论它们的工作原理。如果您想了解更多关于 R 中建模函数的信息，我们推荐阅读 [*Tidy Modeling with R*](https://www.tmwr.org) 中的 ["A Review of R Modeling Fundamentals"](https://www.tmwr.org/base-r.html)；
-3. 熟悉 R 的其他基础知识，例如[编写函数](https://r4ds.hadley.nz/functions.html)。[*R for Data Science*](https://r4ds.hadley.nz/) 也是这些主题的一个很好的资源。（如果您想深入了解 R 这门编程语言，我们推荐 [*Advanced R*](https://adv-r.hadley.nz/index.html)。）
-4. 另外，本书还将使用 tidymodels 生态系统中的工具，这是一组与 tidyverse 相关的 R 包，用于建模。但 tidymodels 也专注于预测模型的构建，因此它的许多工具并不适用于本书。然而，如果您对这个主题感兴趣，我们推荐阅读 [*Tidy Modeling with R*](https://www.tmwr.org)。
+我们对作为读者的你作出了一些假设：
 
-还有几本关于因果推断的优秀书籍。本书的重点是基于 R 进行因果推断，但从其他角度了解这个领域也是有帮助的。您可能会喜欢这几本书：
+1.  你熟悉 R 包 [tidyverse](https://www.tidyverse.org/) 生态系统及其总体理念。例如，本书会大量使用 dplyr 和 ggplot2，但不会解释它们的基础语法。若想了解如何开始使用 tidyverse，我们推荐 [*R for Data Science*](https://r4ds.hadley.nz/)。
+2.  你熟悉 R 中的基础统计建模。例如，我们会用 `lm()` 和 `glm()` 拟合许多模型，但不会讨论它们的工作原理。如果你想进一步了解 R 强大的建模函数，我们推荐阅读 [*Tidy Modeling with R*](https://www.tmwr.org) 中的 ["A Review of R Modeling Fundamentals"](https://www.tmwr.org/base-r.html)。
+3.  我们还假设你熟悉其他 R 基础知识，例如[编写函数](https://r4ds.hadley.nz/functions.html)。[*R for Data Science*](https://r4ds.hadley.nz/) 也是学习这些主题的好资源。（若想更深入学习 R 编程语言，我们推荐 [*Advanced R*](https://adv-r.hadley.nz/index.html)，不过本书并不假设你已经掌握其中内容。）
 
-- [*Causal Inference: What If?*](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/)
-- [*Causal Inference: The Mixtape*](https://mixtape.scunning.com/)
-- [*The Effect*](https://theeffectbook.net/)
+我们还会使用 tidymodels 生态系统中的工具，这是一组与 tidyverse 相关、用于建模的 R 包。我们并不假设你以前用过它们。tidymodels 也聚焦于预测建模，因此其中许多工具并不适合本书。尽管如此，如果你对这个主题感兴趣，我们推荐 [*Tidy Modeling with R*](https://www.tmwr.org)。
 
-第一本书侧重于流行病学。后两本书侧重于计量经济学。我们还推荐阅读 *The Book of Why* @pearl2018why 以了解更多关于因果图的信息。
+关于因果推断，还有几本其他优秀书籍。本书的不同之处在于它聚焦于 R，但从其他视角理解这一领域仍然很有帮助。你可能会喜欢以下几本书：
 
-## 本书约定
+-   [*Causal Inference: What If?*](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/)
+-   [*Causal Inference: The Mixtape*](https://mixtape.scunning.com/)
+-   [*The Effect*](https://theeffectbook.net/)
+
+第一本书聚焦于流行病学。后两本书聚焦于计量经济学。关于因果图，我们还推荐 *The Book of Why* @pearl2018why。
+
+## 安装
+
+本书使用了几个正在积极开发中的包。要安装所需的开发版本，请使用：
+
+```{r}
+#| eval: false
+# install.packages("pak")
+pak::pak(c(
+  "r-causal/causalworkshop",
+  "r-causal/ggdag",
+  "r-causal/halfmoon",
+  "r-causal/propensity",
+  "r-causal/tipr",
+  "LucyMcGowan/touringplans"
+))
+```
+
+这些开发版本包含本书通篇使用的最新功能和错误修复。
+
+## 约定
 
 ### 现代 R 特性
 
-我们在本书中使用了 R 4.1.0 及以上版本中的两个现代 R 特性。第一个是原生管道操作符 `|>`。这个 R 特性类似于您可能更熟悉的 tidyverse 中的 `%>%`。在一般情况下，这两者可以互换使用。而两者一个显著的区别是，`|>` 使用 `_` 符号来指示管道的结果，例如：`.df |> lm(y ~ x, data = _)`。有关此主题的更多信息，请参阅 [Tidyverse 博客文章](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/)。
+本书使用 R 4.1.0 及以上版本中的两个现代 R 特性。第一个是原生管道 `|>`。这个 R 特性类似于 tidyverse 的 `%>%`，后者你可能更熟悉。在典型情况下，两者可以互换使用。一个显著差异是，`|>` 使用 `_` 符号来指向管道结果，例如 `.df |> lm(y ~ x, data = _)`。更多内容见[这篇 Tidyverse 博客文章](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/)。
 
-另一个我们在本书中使用的现代 R 特性是原生 lambda，这是一种编写简短函数的方法，形式为 `\(.x) do_something(.x)`。它类似于 purrr 包中的 `~` lambda 表示。需要注意的是，原生 lambda 与 `function(.x) do_something(.x)` 是相同的，其中 `\` 是 `function` 的简写。有关此主题的更多信息，请参阅 [*R for Data Science*](https://r4ds.hadley.nz/iteration.html) 中关于迭代的章节。
+我们使用的另一个现代 R 特性是原生 lambda，它是一种编写短函数的方式，形式如 `\(.x) do_something(.x)`。它类似于 purrr 的 `~` lambda 记法。还需要认识到，原生 lambda 与 `function(.x) do_something(.x)` 完全相同，其中 `\` 是 `function` 的简写。更多内容见 [R for Data Science 关于迭代的章节](https://r4ds.hadley.nz/iteration.html)。
 
 ## 主题
 
-本书中的图均使用一致的主题，我们不会在每个代码块中都包含它，这意味着如果您运行可视化代码，可能会得到略有不同的结果。我们设置了以下与 ggplot2 相关的默认值：
+本书中的图使用统一主题，但我们不会在每个代码块中都包含这些设置；这意味着如果你运行某个可视化的代码，可能会得到外观略有不同的结果。我们设置了以下与 ggplot2 相关的默认值：
 
 <!-- TODO: make sure these are up to date -->
 
 ```{r}
 #| eval: false
 options(
-  # 设置 ggplot2 中的默认颜色为色盲友好
-  # 使用 Okabe-Ito 和 Viridis 调色板
+  # 将 ggplot2 中的默认颜色设置为色盲友好
+  # Okabe-Ito 和 Viridis 调色板
   ggplot2.discrete.colour = ggokabeito::palette_okabe_ito(),
   ggplot2.discrete.fill = ggokabeito::palette_okabe_ito(),
   ggplot2.continuous.colour = "viridis",
   ggplot2.continuous.fill = "viridis",
-  # 设置主题字体字号
+  # 设置主题字体和大小
   book.base_family = "sans",
   book.base_size = 14
 )
@@ -70,7 +92,7 @@ theme_set(
 )
 ```
 
-我们还屏蔽了一些来自 ggdag 的函数，以便进行自定义：
+我们还屏蔽了几个来自 ggdag、且我们希望自定义的函数：
 
 ```{r}
 #| eval: false
@@ -93,3 +115,9 @@ geom_dag_label_repel <- function(..., seed = 10) {
   )
 }
 ```
+
+## 许可证
+
+<p xmlns:cc="http://creativecommons.org/ns#" >本作品采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""></a> 许可：“本许可证要求再使用者注明创作者。它允许再使用者出于非商业目的，以任何媒介或格式分发、混编、改编和基于本材料进行创作。”</p>
+
+本书中的代码也可根据 [MIT license](https://opensource.org/licenses/MIT) 使用。根据 MIT 许可证，只要注明来源，你可以在自己的工作中自由使用这些代码。

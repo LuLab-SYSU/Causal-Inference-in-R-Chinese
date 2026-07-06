@@ -22,9 +22,9 @@ execute:
 
 book:
   title: "Causal Inference in R 中文版"
-  author: ["Malcolm Barrett, et al.", "陆震（译）"]
+  author: ["Malcolm Barrett, Lucy D'Agostino McGowan, Travis Gerke", "陆震（译）"]
   date: "today"
-  repo-url: https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese
+  repo-url: https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese
   repo-actions: [edit, issue]
   chapters:
     - index.qmd
@@ -46,11 +46,8 @@ format:
       - style.scss
     include-in-header: "plausible.html"
     email-obfuscation: javascript
-  # pdf:
-  #   documentclass: scrreprt
 
 editor_options:
   markdown:
     wrap: sentence
     canonical: true
-

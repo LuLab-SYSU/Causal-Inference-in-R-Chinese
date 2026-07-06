@@ -15,8 +15,36 @@ knitr::opts_chunk$set(
 
 # Causal Inference in R 中文版
 
+<!-- badges: start -->
+
+<!-- badges: end -->
+
 *Causal Inference in R 中文版*是由[陆震](https://leslie-lu.github.io/)翻译和维护的 [*Causal Inference in R*](https://www.r-causal.org/) 的中文版。
+
+本仓库包含*Causal Inference in R 中文版*的源代码。
+
+## 安装
+
+克隆本仓库后，可以使用以下命令安装本书所需的包依赖：
+
+``` r
+# install.packages("remotes")
+remotes::install_deps(dependencies = TRUE)
+```
+
+我们使用 [Quarto](https://quarto.org/) 渲染本书。
+
+## 格式化和 lint 检查
+
+本项目使用 [panache](https://panache.bz/) 对 Quarto 文档进行格式化和 lint 检查。对于代码单元，panache 分别使用 [air](https://posit-dev.github.io/air/) 和 [jarl](https://jarl.etiennebacher.com/) 进行格式化和 lint 检查。
+
+```bash
+panache format chapters/
+panache lint chapters/
+```
 
 ## 问题与反馈
 
-本书源文件均用 [Quarto](https://quarto.org/) 撰写。如果你发现了任何错误，请点击菜单栏上的**编辑**按钮，并在 [Github](https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese) 上向我提交合并请求。如果读者有任何的疑问，请通过创建 [GitHub issue](https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese/issues) 与我联系。
+本书源文件均用 [Quarto](https://quarto.org/) 撰写。如果你发现了任何错误，请点击菜单栏上的**编辑**按钮，并在 [Github](https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese) 上向我提交合并请求。
+
+如果读者有任何的疑问，请通过创建 [GitHub issue](https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese/issues) 与我联系。

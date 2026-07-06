@@ -12,3 +12,5 @@ _freeze/
 etc/
 /.renv/
 .renv.lock
+
+**/*.quarto_ipynb
