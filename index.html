@@ -2,16 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Malcolm Barrett, et al.">
+<meta name="author" content="Malcolm Barrett, Lucy D’Agostino McGowan, Travis Gerke">
 <meta name="author" content="陆震（译）">
-<meta name="dcterms.date" content="2025-11-12">
+<meta name="dcterms.date" content="2026-07-06">
 
 <title>Causal Inference in R 中文版</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -62,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -91,15 +93,14 @@ div.csl-indent {
 <link href="./chapters/01-casual-to-causal.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b03e9dd58b68ec3677f40c25f097157d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a8845729a8946a96d4688550a3aa9eb7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -154,13 +155,11 @@ div.csl-indent {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Causal Inference in R 中文版</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -212,14 +211,16 @@ div.csl-indent {
   <ul>
   <li><a href="#前言" id="toc-前言" class="nav-link active" data-scroll-target="#前言">前言</a>
   <ul class="collapse">
-  <li><a href="#本书约定" id="toc-本书约定" class="nav-link" data-scroll-target="#本书约定">本书约定</a>
+  <li><a href="#安装" id="toc-安装" class="nav-link" data-scroll-target="#安装">安装</a></li>
+  <li><a href="#约定" id="toc-约定" class="nav-link" data-scroll-target="#约定">约定</a>
   <ul class="collapse">
   <li><a href="#现代-r-特性" id="toc-现代-r-特性" class="nav-link" data-scroll-target="#现代-r-特性">现代 R 特性</a></li>
   </ul></li>
   <li><a href="#主题" id="toc-主题" class="nav-link" data-scroll-target="#主题">主题</a></li>
+  <li><a href="#许可证" id="toc-许可证" class="nav-link" data-scroll-target="#许可证">许可证</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -236,7 +237,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
-             <p>Malcolm Barrett, et al. </p>
+             <p>Malcolm Barrett, Lucy D’Agostino McGowan, Travis Gerke </p>
              <p>陆震（译） </p>
           </div>
   </div>
@@ -244,7 +245,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 12, 2025</p>
+      <p class="date">July 6, 2026</p>
     </div>
   </div>
   
@@ -260,96 +261,120 @@ div.csl-indent {
 <h1 class="unnumbered">前言</h1>
 <p>欢迎来到 <a href="https://www.r-causal.org/"><em>Causal Inference in R</em></a> 中文版。本书中文版内容的翻译由<a href="https://leslie-lu.github.io/">陆震</a>完成并维护。目前本书中文版内容还没有纸质出版，如果读者是出版人员，并有意愿负责出版本书，请通过 <script type="text/javascript">
 <!--
-h='&#x6d;&#x61;&#x69;&#108;&#50;&#46;&#x73;&#x79;&#x73;&#x75;&#46;&#x65;&#100;&#x75;&#46;&#x63;&#110;';a='&#64;';n='&#108;&#x75;&#122;&#104;&#50;&#x39;';e=n+a+h;
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#90;&#104;&#x65;&#110;&#46;&#76;&#x75;&#46;&#86;&#x41;';e=n+a+h;
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
 // -->
-</script><noscript>luzh29 at mail2 dot sysu dot edu dot cn</noscript> 联系我们。</p>
-<p>对于因果问题的回答，在科学研究与商业用途中都具有重要意义。但是现实中，诸如随机临床试验与 A/B 测试等因果推断方法并不总是可行的。因此，我们需要借助观察数据来进行因果推断。本书将介绍如何使用 R 语言进行因果推断，以及如何使用现代因果推断方法来解决实际问题。通过本书，您将学习到：</p>
+</script><noscript>Zhen.Lu.VA at gmail dot com</noscript> 联系我。</p>
+<p>回答因果问题对于科学和商业目的都至关重要，但随机临床试验和 A/B 测试等技术并不总是可行或成功。本书中的工具将帮助读者使用 R 编程语言，更好地基于观察性数据进行因果推断。读完本书后，我们希望帮助你：</p>
 <ol type="1">
-<li>更好地理解因果推断的基本概念；</li>
-<li>理解因果推断的假设；</li>
-<li>准确识别进行因果推断的目标人群；</li>
-<li>使用现代因果推断方法来解决实际问题；</li>
-<li>进行因果推断的敏感性分析。</li>
+<li>提出更好的因果问题；</li>
+<li>理解因果推断所需的假设；</li>
+<li>识别你希望对其进行推断的目标人群；</li>
+<li>拟合因果模型并检查其中的问题；</li>
+<li>在所用技术可能并不完美的情况下开展敏感性分析。</li>
 </ol>
-<p>本书的目标读者是数据科学家、数据分析师、科学研究人员以及对因果推断感兴趣的读者。尽管在现实中，提问的因果问题可能是不同的，如“医学中癌症相关因果问题”或“某个广告点击率的因果关系”等，但是这些问题背后的因果推断方法是相通的。本书中，我们使用来自医学、经济以及科技相关方面的例子来具体地阐释因果推断。需要提醒大家的是，由于本书聚焦于借助观察数据进行因果推断，因此本书并不会涉及到随机临床试验、A/B 测试的内容。</p>
-<p>在阅读本书前，我们建议您具备以下知识：</p>
+<p>本书面向学术研究者和数据科学家。尽管这两类场景中的问题可能不同，但许多技术是相同的：因果推断既有助于提出关于癌症的问题，也有助于提出关于点击的问题。我们使用来自医学、经济学、科技和其他领域的混合例子来说明：你需要一个清楚的因果问题，并愿意透明地说明自己的假设。</p>
+<p>你会在本书中学到很多，但讽刺的是，你不会学到太多关于如何开展随机试验的内容，而随机试验是进行因果推断的最佳工具之一。随机试验及其近亲 A/B 测试（在科技行业中很常见）之所以有吸引力，是因为它们能减轻许多为了有效推断而需要作出的假设。它们在设计上也足够复杂，值得拥有自己的学习资源。相反，我们会聚焦于观察性数据，在这类数据中，我们通常无法从随机化中受益。如果你对随机化技术感兴趣，也先不要把这份资源放到一边：许多为观察性数据设计的因果推断技术，同样能改进随机化分析。</p>
+<p>我们对作为读者的你作出了一些假设：</p>
 <ol type="1">
-<li>熟悉 <a href="https://www.tidyverse.org/">tidyverse</a> 生态系统中的 R 包及其总体理念。例如，我们在本书中大量使用 dplyr 和 ggplot2，但不会解释它们的基本语法。要了解更多关于 tidyverse 的入门知识，我们推荐阅读 <a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a>；</li>
-<li>熟悉 R 中的基本统计建模。例如，我们将在本书中使用 <code>lm()</code> 和 <code>glm()</code> 拟合模型，但不会讨论它们的工作原理。如果您想了解更多关于 R 中建模函数的信息，我们推荐阅读 <a href="https://www.tmwr.org"><em>Tidy Modeling with R</em></a> 中的 <a href="https://www.tmwr.org/base-r.html">“A Review of R Modeling Fundamentals”</a>；</li>
-<li>熟悉 R 的其他基础知识，例如<a href="https://r4ds.hadley.nz/functions.html">编写函数</a>。<a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a> 也是这些主题的一个很好的资源。（如果您想深入了解 R 这门编程语言，我们推荐 <a href="https://adv-r.hadley.nz/index.html"><em>Advanced R</em></a>。）</li>
-<li>另外，本书还将使用 tidymodels 生态系统中的工具，这是一组与 tidyverse 相关的 R 包，用于建模。但 tidymodels 也专注于预测模型的构建，因此它的许多工具并不适用于本书。然而，如果您对这个主题感兴趣，我们推荐阅读 <a href="https://www.tmwr.org"><em>Tidy Modeling with R</em></a>。</li>
+<li>你熟悉 R 包 <a href="https://www.tidyverse.org/">tidyverse</a> 生态系统及其总体理念。例如，本书会大量使用 dplyr 和 ggplot2，但不会解释它们的基础语法。若想了解如何开始使用 tidyverse，我们推荐 <a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a>。</li>
+<li>你熟悉 R 中的基础统计建模。例如，我们会用 <code>lm()</code> 和 <code>glm()</code> 拟合许多模型，但不会讨论它们的工作原理。如果你想进一步了解 R 强大的建模函数，我们推荐阅读 <a href="https://www.tmwr.org"><em>Tidy Modeling with R</em></a> 中的 <a href="https://www.tmwr.org/base-r.html">“A Review of R Modeling Fundamentals”</a>。</li>
+<li>我们还假设你熟悉其他 R 基础知识，例如<a href="https://r4ds.hadley.nz/functions.html">编写函数</a>。<a href="https://r4ds.hadley.nz/"><em>R for Data Science</em></a> 也是学习这些主题的好资源。（若想更深入学习 R 编程语言，我们推荐 <a href="https://adv-r.hadley.nz/index.html"><em>Advanced R</em></a>，不过本书并不假设你已经掌握其中内容。）</li>
 </ol>
-<p>还有几本关于因果推断的优秀书籍。本书的重点是基于 R 进行因果推断，但从其他角度了解这个领域也是有帮助的。您可能会喜欢这几本书：</p>
+<p>我们还会使用 tidymodels 生态系统中的工具，这是一组与 tidyverse 相关、用于建模的 R 包。我们并不假设你以前用过它们。tidymodels 也聚焦于预测建模，因此其中许多工具并不适合本书。尽管如此，如果你对这个主题感兴趣，我们推荐 <a href="https://www.tmwr.org"><em>Tidy Modeling with R</em></a>。</p>
+<p>关于因果推断，还有几本其他优秀书籍。本书的不同之处在于它聚焦于 R，但从其他视角理解这一领域仍然很有帮助。你可能会喜欢以下几本书：</p>
 <ul>
 <li><a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/"><em>Causal Inference: What If?</em></a></li>
 <li><a href="https://mixtape.scunning.com/"><em>Causal Inference: The Mixtape</em></a></li>
 <li><a href="https://theeffectbook.net/"><em>The Effect</em></a></li>
 </ul>
-<p>第一本书侧重于流行病学。后两本书侧重于计量经济学。我们还推荐阅读 <em>The Book of Why</em> <span class="citation" data-cites="pearl2018why">Pearl and Mackenzie (<a href="chapters/99-references.html#ref-pearl2018why" role="doc-biblioref">2018</a>)</span> 以了解更多关于因果图的信息。</p>
-<section id="本书约定" class="level2">
-<h2 class="anchored" data-anchor-id="本书约定">本书约定</h2>
+<p>第一本书聚焦于流行病学。后两本书聚焦于计量经济学。关于因果图，我们还推荐 <em>The Book of Why</em> <span class="citation" data-cites="pearl2018why">Pearl and Mackenzie (<a href="chapters/99-references.html#ref-pearl2018why" role="doc-biblioref">2018</a>)</span>。</p>
+<section id="安装" class="level2">
+<h2 class="anchored" data-anchor-id="安装">安装</h2>
+<p>本书使用了几个正在积极开发中的包。要安装所需的开发版本，请使用：</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("pak")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pak<span class="sc">::</span><span class="fu">pak</span>(<span class="fu">c</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"r-causal/causalworkshop"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"r-causal/ggdag"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"r-causal/halfmoon"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"r-causal/propensity"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"r-causal/tipr"</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"LucyMcGowan/touringplans"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>这些开发版本包含本书通篇使用的最新功能和错误修复。</p>
+</section>
+<section id="约定" class="level2">
+<h2 class="anchored" data-anchor-id="约定">约定</h2>
 <section id="现代-r-特性" class="level3">
 <h3 class="anchored" data-anchor-id="现代-r-特性">现代 R 特性</h3>
-<p>我们在本书中使用了 R 4.1.0 及以上版本中的两个现代 R 特性。第一个是原生管道操作符 <code>|&gt;</code>。这个 R 特性类似于您可能更熟悉的 tidyverse 中的 <code>%&gt;%</code>。在一般情况下，这两者可以互换使用。而两者一个显著的区别是，<code>|&gt;</code> 使用 <code>_</code> 符号来指示管道的结果，例如：<code>.df |&gt; lm(y ~ x, data = _)</code>。有关此主题的更多信息，请参阅 <a href="https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/">Tidyverse 博客文章</a>。</p>
-<p>另一个我们在本书中使用的现代 R 特性是原生 lambda，这是一种编写简短函数的方法，形式为 <code>\(.x) do_something(.x)</code>。它类似于 purrr 包中的 <code>~</code> lambda 表示。需要注意的是，原生 lambda 与 <code>function(.x) do_something(.x)</code> 是相同的，其中 <code>\</code> 是 <code>function</code> 的简写。有关此主题的更多信息，请参阅 <a href="https://r4ds.hadley.nz/iteration.html"><em>R for Data Science</em></a> 中关于迭代的章节。</p>
+<p>本书使用 R 4.1.0 及以上版本中的两个现代 R 特性。第一个是原生管道 <code>|&gt;</code>。这个 R 特性类似于 tidyverse 的 <code>%&gt;%</code>，后者你可能更熟悉。在典型情况下，两者可以互换使用。一个显著差异是，<code>|&gt;</code> 使用 <code>_</code> 符号来指向管道结果，例如 <code>.df |&gt; lm(y ~ x, data = _)</code>。更多内容见<a href="https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/">这篇 Tidyverse 博客文章</a>。</p>
+<p>我们使用的另一个现代 R 特性是原生 lambda，它是一种编写短函数的方式，形式如 <code>\(.x) do_something(.x)</code>。它类似于 purrr 的 <code>~</code> lambda 记法。还需要认识到，原生 lambda 与 <code>function(.x) do_something(.x)</code> 完全相同，其中 <code>\</code> 是 <code>function</code> 的简写。更多内容见 <a href="https://r4ds.hadley.nz/iteration.html">R for Data Science 关于迭代的章节</a>。</p>
 </section>
 </section>
 <section id="主题" class="level2">
 <h2 class="anchored" data-anchor-id="主题">主题</h2>
-<p>本书中的图均使用一致的主题，我们不会在每个代码块中都包含它，这意味着如果您运行可视化代码，可能会得到略有不同的结果。我们设置了以下与 ggplot2 相关的默认值：</p>
+<p>本书中的图使用统一主题，但我们不会在每个代码块中都包含这些设置；这意味着如果你运行某个可视化的代码，可能会得到外观略有不同的结果。我们设置了以下与 ggplot2 相关的默认值：</p>
 <!-- TODO: make sure these are up to date -->
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 设置 ggplot2 中的默认颜色为色盲友好</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 使用 Okabe-Ito 和 Viridis 调色板</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.discrete.colour =</span> ggokabeito<span class="sc">::</span><span class="fu">palette_okabe_ito</span>(),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.discrete.fill =</span> ggokabeito<span class="sc">::</span><span class="fu">palette_okabe_ito</span>(),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.continuous.colour =</span> <span class="st">"viridis"</span>,</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.continuous.fill =</span> <span class="st">"viridis"</span>,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 设置主题字体字号</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">book.base_family =</span> <span class="st">"sans"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">book.base_size =</span> <span class="dv">14</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置默认主题</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_size =</span> <span class="fu">getOption</span>(<span class="st">"book.base_size"</span>),</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_family =</span> <span class="fu">getOption</span>(<span class="st">"book.base_family"</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%+replace%</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 将 ggplot2 中的默认颜色设置为色盲友好</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Okabe-Ito 和 Viridis 调色板</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.discrete.colour =</span> ggokabeito<span class="sc">::</span><span class="fu">palette_okabe_ito</span>(),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.discrete.fill =</span> ggokabeito<span class="sc">::</span><span class="fu">palette_okabe_ito</span>(),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.continuous.colour =</span> <span class="st">"viridis"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot2.continuous.fill =</span> <span class="st">"viridis"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 设置主题字体和大小</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">book.base_family =</span> <span class="st">"sans"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">book.base_size =</span> <span class="dv">14</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置默认主题</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_size =</span> <span class="fu">getOption</span>(<span class="st">"book.base_size"</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_family =</span> <span class="fu">getOption</span>(<span class="st">"book.base_family"</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%+replace%</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>我们还屏蔽了一些来自 ggdag 的函数，以便进行自定义：</p>
+<p>我们还屏蔽了几个来自 ggdag、且我们希望自定义的函数：</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>theme_dag <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  ggdag<span class="sc">::</span><span class="fu">theme_dag</span>(<span class="at">base_family =</span> <span class="fu">getOption</span>(<span class="st">"book.base_family"</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>geom_dag_label_repel <span class="ot">&lt;-</span> <span class="cf">function</span>(..., <span class="at">seed =</span> <span class="dv">10</span>) {</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  ggdag<span class="sc">::</span><span class="fu">geom_dag_label_repel</span>(</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(x, y, <span class="at">label =</span> label),</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">box.padding =</span> <span class="fl">3.5</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">getOption</span>(<span class="st">"book.base_family"</span>),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">seed =</span> seed,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.size =</span> <span class="cn">NA</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.padding =</span> <span class="fl">0.1</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fu">getOption</span>(<span class="st">"book.base_size"</span>) <span class="sc">/</span> <span class="dv">3</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    ...</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>theme_dag <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  ggdag<span class="sc">::</span><span class="fu">theme_dag</span>(<span class="at">base_family =</span> <span class="fu">getOption</span>(<span class="st">"book.base_family"</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>geom_dag_label_repel <span class="ot">&lt;-</span> <span class="cf">function</span>(..., <span class="at">seed =</span> <span class="dv">10</span>) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  ggdag<span class="sc">::</span><span class="fu">geom_dag_label_repel</span>(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(x, y, <span class="at">label =</span> label),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">box.padding =</span> <span class="fl">3.5</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">max.overlaps =</span> <span class="cn">Inf</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">family =</span> <span class="fu">getOption</span>(<span class="st">"book.base_family"</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">seed =</span> seed,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.size =</span> <span class="cn">NA</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">label.padding =</span> <span class="fl">0.1</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="fu">getOption</span>(<span class="st">"book.base_size"</span>) <span class="sc">/</span> <span class="dv">3</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="许可证" class="level2">
+<h2 class="anchored" data-anchor-id="许可证">许可证</h2>
+<p xmlns:cc="http://creativecommons.org/ns#">
+本作品采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""></a> 许可：“本许可证要求再使用者注明创作者。它允许再使用者出于非商业目的，以任何媒介或格式分发、混编、改编和基于本材料进行创作。”
+</p>
+<p>本书中的代码也可根据 <a href="https://opensource.org/licenses/MIT">MIT license</a> 使用。根据 MIT 许可证，只要注明来源，你可以在自己的工作中自由使用这些代码。</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-pearl2018why" class="csl-entry" role="listitem">
 Pearl, J., and D. Mackenzie. 2018. <em>The Book of Why: The New Science of Cause and Effect</em>. Penguin Books Limited.
 </div>
@@ -772,4 +797,4 @@ Pearl, J., and D. Mackenzie. 2018. <em>The Book of Why: The New Science of Cause
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Leslie-Lu/Causal-Inference-in-R-Chinese/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/LuLab-SYSU/Causal-Inference-in-R-Chinese/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
